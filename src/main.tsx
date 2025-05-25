@@ -1,15 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Root from "./routes/Root.tsx";
+import RootRoute from "./routes/RootRoute.tsx";
+import CustomChallengeRoute from "./routes/CustomChallengeRoute.tsx";
 import ErrorPage from "./ErrorPage.tsx";
-import "./index.css";
+import "../index.css";
 import Home from "./components/Home.tsx";
+import CustomChallenge from "./components/CustomChallenge.tsx"
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <RootRoute />,
     errorElement: <ErrorPage />,
     children: [
       {
@@ -19,6 +21,18 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/custom-challenge",
+    element: <CustomChallengeRoute />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/custom-challenge",
+        element: <CustomChallenge />,
+        errorElement: <ErrorPage />,
+      }
+    ]
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

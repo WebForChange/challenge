@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-const Root: React.FC = () => {
+const RootRoute: React.FC = () => {
   return (
     <div>
       {/* <p>Welcome to the Root Route</p> */}
@@ -10,4 +10,4 @@ const Root: React.FC = () => {
   );
 };
 
-export default Root;
+export default RootRoute;
