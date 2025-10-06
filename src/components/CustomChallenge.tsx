@@ -44,14 +44,13 @@ const CustomChallenge: React.FC = () => {
     }
 
     return (
-
-        <div className="flex bg-gray-100 flex-col w-full mx-auto items-center justify-center min-h-screen bg-gray-100">
+        <div className="flex bg-gray-100 flex-col w-full mx-auto items-center justify-center min-h-screen px-4">
             <h1 className="text-4xl font-bold mb-8 text-red border-dashed">
                 Custom Challenge
             </h1>
 
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="w-full max-w-md space-y-6">
                     <FormField
                         control={form.control}
                         name="challenge"
