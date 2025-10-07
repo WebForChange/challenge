@@ -44,7 +44,7 @@ const CustomChallenge: React.FC = () => {
 
     return (
         <div className="flex page-background flex-col w-full mx-auto items-center justify-center min-h-screen px-4">
-            <h1 className="text-4xl font-bold mb-8 text-red-600 border-dashed">
+            <h1 className="text-4xl font-bold mb-8 border-dashed">
                 Custom Challenge
             </h1>
 
