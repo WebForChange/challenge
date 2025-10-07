@@ -1,5 +1,3 @@
-import React from "react";
-
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -16,6 +14,7 @@ import {
     FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { TOAST_SUBMIT_TITLE } from "../utils/constants"
 
 const FormSchema = z.object({
     challenge: z.string().min(2, {
@@ -34,7 +33,7 @@ const CustomChallenge: React.FC = () => {
 
     function onSubmit(data: z.infer<typeof FormSchema>) {
         toast({
-            title: "You submitted the following values:",
+            title: TOAST_SUBMIT_TITLE,
             description: (
                 <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
                     <code className="text-white">{JSON.stringify(data, null, 2)}</code>
@@ -44,8 +43,8 @@ const CustomChallenge: React.FC = () => {
     }
 
     return (
-        <div className="flex bg-gray-100 flex-col w-full mx-auto items-center justify-center min-h-screen px-4">
-            <h1 className="text-4xl font-bold mb-8 text-red border-dashed">
+        <div className="flex page-background flex-col w-full mx-auto items-center justify-center min-h-screen px-4">
+            <h1 className="text-4xl font-bold mb-8 text-red-600 border-dashed">
                 Custom Challenge
             </h1>
 

@@ -1,12 +1,12 @@
-import React from "react";
+import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import RootRoute from "./routes/RootRoute.tsx";
-import CustomChallengeRoute from "./routes/CustomChallengeRoute.tsx";
-import ErrorPage from "./ErrorPage.tsx";
+import RootRoute from "./routes/RootRoute";
+import CustomChallengeRoute from "./routes/CustomChallengeRoute";
+import ErrorPage from "./ErrorPage";
 import "./index.css";
-import Home from "./components/Home.tsx";
-import CustomChallenge from "./components/CustomChallenge.tsx"
+import Home from "./components/Home";
+import CustomChallenge from "./components/CustomChallenge";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
+  <StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </StrictMode>
 );
